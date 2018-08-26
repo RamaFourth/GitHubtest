@@ -3,11 +3,12 @@ import java.io.InputStreamReader;
 
 public class solution {
     public static void main(String[] args) {
+        System.out.println("Enter text and press \"Enter\"");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try
         {
             String s = reader.readLine();
-            printReverse(s);
+            printStrReverse(s);
             printStrInColumn(s);
 
         }
@@ -16,21 +17,19 @@ public class solution {
             System.out.println(e);
         }
     }
-    public static void printReverse(String s)
+    public static void printStrReverse(String s)
     {
-        char[] ar = s.toCharArray();
-        for (int i = ar.length-1; i>=0; i--)
+        for (int i = s.length()-1; i>=0; i--)
         {
-            System.out.print(ar[i]);
+            System.out.print(s.charAt(i));
         }
         System.out.println();
     }
     public static void printStrInColumn(String s)
     {
-        char[] ar = s.toCharArray();
-        for (int i = 0; i<ar.length; i++)
+        for (int i = 0; i<s.length(); i++)
         {
-            System.out.println(ar[i]);
+            System.out.println(s.charAt(i));
         }
     }
 }
